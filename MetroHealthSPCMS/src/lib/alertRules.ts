@@ -68,7 +68,7 @@ const getRecentVitals = (vitals: VitalSign[], windowMinutes: number = 60): Vital
  * - Respiratory rate >20 breaths/min
  * - WBC >12,000 or <4,000 cells/mm³ (not implemented in vitals)
  */
-const evaluateSIRS = (vitals: VitalSign[]): boolean => {
+export const evaluateSIRS = (vitals: VitalSign[]): boolean => {
   const recentVitals = getRecentVitals(vitals, 60);
   let criteriaCount = 0;
 
@@ -95,7 +95,7 @@ const evaluateSIRS = (vitals: VitalSign[]): boolean => {
  * 
  * Trigger: Score >= 5
  */
-const calculateEWS = (vitals: VitalSign[]): number => {
+export const calculateEWS = (vitals: VitalSign[]): number => {
   const recentVitals = getRecentVitals(vitals, 60);
   let score = 0;
 
@@ -133,7 +133,7 @@ const calculateEWS = (vitals: VitalSign[]): number => {
   return score;
 };
 
-const evaluateEWS = (vitals: VitalSign[]): boolean => {
+export const evaluateEWS = (vitals: VitalSign[]): boolean => {
   return calculateEWS(vitals) >= 5;
 };
 

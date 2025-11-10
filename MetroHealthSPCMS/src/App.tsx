@@ -6,7 +6,7 @@ import { DashboardPage } from '@/components/DashboardPage';
 import { PatientDashboard } from '@/components/dashboards/PatientDashboard';
 import { NurseDashboard } from '@/components/dashboards/NurseDashboard';
 import { ProviderPatientStatus } from '@/components/dashboards/ProviderPatientStatus';
-import { SystemAdminDashboard } from '@/components/dashboards/SystemAdminDashboard';
+import { SystemAdminDashboardNew } from '@/components/dashboards/SystemAdminDashboardNew';
 import { PatientAppointmentScheduler } from '@/components/appointments/PatientAppointmentScheduler';
 import { MyAppointments } from '@/components/appointments/MyAppointments';
 import { AppointmentManagement } from '@/components/appointments/AppointmentManagement';
@@ -76,7 +76,7 @@ function App() {
             path="/dashboard/admin"
             element={
               <ProtectedRoute requiredRoles={['admin']}>
-                <SystemAdminDashboard />
+                <SystemAdminDashboardNew />
               </ProtectedRoute>
             }
           />
